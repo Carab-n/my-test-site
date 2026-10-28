@@ -1,36 +1,54 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>coolgame</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="coolgame.html">
 </head>
 <style>
     body {
-    font-family: Arial, sans-serif;
-    background-color: #0f172a;
-    color: #38bdf8;
-    text-align: center;
-    padding-top: 50px;
-}
-.container {
-    background-color: #1e293b;
-    padding: 30px;
-    border-radius: 10px;
-    display: inline-block;
-}
-.btn{
-    padding: 7px 10px;
-    color: white;
-    border-radius: 10;
-    background: #0f172a;
-}
+        font-family: Arial, sans-serif;
+        background-color: #0f172a;
+        color: #38bdf8;
+        text-align: center;
+        padding-top: 50px;
+    }
+
+    .container {
+        background-color: #1e293b;
+        padding: 30px;
+        border-radius: 10px;
+        display: inline-block;
+    }
+
+    .btn {
+        padding: 7px 10px;
+        color: white;
+        border-radius: 10px;
+        border: none;
+        transition: 0.3s;
+        background: #0f172a;
+    }
+    .btn:hover{
+        background-color: #38bdf8;
+        box-shadow: 10px 10px;
+    }
+    a{
+        background:none;
+        color: white;
+        list-style: none;
+        font-size: 23px;
+    }
 </style>
+
 <body>
     <div class="container">
-        <h1>hello to the wbsute</h1>
+        <h1>wewlcome to COOLGAME</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ea soluta non eligendi rem et?</p>
-        <button class="btn">Download now</button>
+        <button class="btn"><a href="coolgame.apk">Download now</a></button>
     </div>
 </body>
+
 </html>
